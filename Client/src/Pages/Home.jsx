@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Items from "../Components/Items";
 import axios from "axios";
-import { set } from "mongoose";
 
 const Home = () => {
   const [allProducts, setAllProducts] = useState(null);
