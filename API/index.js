@@ -87,7 +87,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect("mongodb+srv://tarundeepsaini037:Testing1234@location.in8fipa.mongodb.net/MobileOrdering?retryWrites=true&w=majority")
+  .connect("mongodb+srv://tarundeepsaini037:Testing1234@location.in8fipa.mongodb.net/Forms?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connected to Database");
   })
