@@ -38,16 +38,16 @@ app.use(
   })
 );
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "uploads");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + "-" + file.originalname);
+//   },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
 app.get("/profile", Profile);
 app.post("/signup", Signup);
@@ -62,7 +62,7 @@ app.post("/buyall", BuyAll);
 app.patch("/restock", Restock);
 app.post("/addToCart", AddToCart);
 app.delete("/deleteItem/:itemId", DeleteItem);
-app.post("/newListing", upload.single("file"), NewListing);
+// app.post("/newListing", upload.single("file"), NewListing);
 app.use("/", (req, res) => {
   res.json({ message: "hello HTere" });
 });
