@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const multer = require("multer");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -25,18 +26,20 @@ const {
   UserInformation,
 } = require("./Controllers/controllers");
 
-const app = express();
+const corsOptions = {
+  origin: "https://form-io.vercel.app",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(cookieParser());
 
 app.use("/uploads", express.static(path.join("uploads")));
 
-app.use(
-  cors({
-    origin: "",
-    credentials: true,
-  })
-);
+
+
 
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
